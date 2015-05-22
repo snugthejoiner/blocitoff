@@ -18,3 +18,5 @@
 
 # ignore the datamodel notes doc
 /datamodel.rb
+# Ignore application configuration
+/config/application.yml
