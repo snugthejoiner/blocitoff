@@ -1,9 +1,8 @@
-if Rails.env.development?
     ActionMailer::Base.delivery_method = :smtp
 
     ActionMailer::Base.smtp_settings = {
-      address:              'smtp.mailgun.org',
       port:                 2525,
+      address:              'smtp.mailgun.org',
       authentication:       :plain,
       user_name:            ENV['MAILGUN_SMTP_LOGIN'],
       password:             ENV['MAILGUN_SMTP_PASSWORD'],
@@ -14,5 +13,3 @@ if Rails.env.development?
 
     # Makes debugging *way* easier.
     ActionMailer::Base.raise_delivery_errors = true
-
-end
