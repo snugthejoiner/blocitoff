@@ -2,12 +2,17 @@
 <html>
 <head>
   <title>Blocitoff</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="pull-right user-info">
+  <div class="container-fluid">
+    <ul class="nav nav-tabs">
+    </ul>
+
+    <div class="pull-right user-info">
     <% if current_user %>
       Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
@@ -32,7 +37,8 @@
       <%= flash[:alert] %>
     </div>
   <% end %>
-<%= yield %>
+    <%= yield %>
 
+  </div>
 </body>
 </html>
