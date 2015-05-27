@@ -2,6 +2,12 @@
   <div class="col-md-10">
     <h1><%= @user.name %></h1>
     <h2><%= @user.email %></h2>
-    <p>This is where more user info will be listed.</p>
+    <p>TASKS</p>
+      <%= render partial: 'items/item', locals: {user: @user} %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <%= render partial: 'items/form', locals: {user: @user} %>
   </div>
 </div>
