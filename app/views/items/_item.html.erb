@@ -4,10 +4,9 @@
       <p>
         <%= item.name %>
         <small class="text-warning">
-          <% if item.expires_at? %>
             expires <%= item.expires_at %> 
-          <% end %>
         </small>
+        <%= link_to "", user_item_complete_path(user,item), class: 'glyphicon glyphicon-ok', method: :put %>
       </p>
     </div>
   <% end %>
