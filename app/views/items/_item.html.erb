@@ -1,11 +1,11 @@
 <div class ="row">
   <% items.each do |item| %>
-    <div class="col-md-12">
+    <div class="col-md-10">
       <p>
         <%= item.name %>
         <small class="text-warning">
           expires in <%= distance_of_time_in_words_to_now(item.expires_at) %>
-            <%= link_to "", user_item_complete_path(current_user,item), class: 'glyphicon glyphicon-ok', method: :put %>
+            <%= link_to "", user_item_complete_path(current_user,item), class: 'glyphicon glyphicon-arrow-down', method: :put %>
         </small>
       </p>
     </div>
