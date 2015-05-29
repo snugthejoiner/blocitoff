@@ -1,12 +1,14 @@
 <div class="row">
   <div class="col-md-10">
     <h1><%= @user.name %><small> <%= @user.email %></small></h1>
-    <h3 class="bg-primary text-center">TASKS</h3>
-      <%= render partial: 'items/item', locals: {user: @user} %>
+    <h3 class="bg-primary text-center">Tasks</h3>
+      <%= render partial: 'items/item', locals: {completed: @completed_items, items: @items} %>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
+  <div class="col-md-10">
     <%= render partial: 'items/form', locals: {user: @user} %>
+  </div>
+  <div class="col-md-10">
+    <h3 class="bg-info text-center">Completed Tasks</h3>
+      <%= render partial: 'items/completed', locals: {completed: @completed_items, items: @items} %>
   </div>
 </div>
