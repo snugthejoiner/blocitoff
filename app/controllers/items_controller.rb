@@ -39,4 +39,17 @@ class ItemsController < ApplicationController
     redirect_to @user
   end
 
+    def uncomplete
+    @user = current_user
+    @item = Item.find(params[:item_id])
+    @item.update_attribute(:completed, false)
+    if @item.save
+      flash[:notice] = "Task Uncompleted."
+    else
+      flash[:error] = "There was an error saving the item. Please try again."
+    end
+
+    redirect_to @user
+  end
+
 end
